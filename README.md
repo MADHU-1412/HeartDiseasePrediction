@@ -1,9 +1,8 @@
-# Heart Disease Risk Prediction Project 🫀
+# Heart Disease Risk Prediction Project 
 
 ## 1. Project Goal  
 The objective of this project is to develop a clinically-readable model to predict the presence of heart disease, using the Cleveland Heart Disease dataset. The aim is not only strong predictive performance, but also interpretable risk stratification and decision-rule generation to support screening efforts in clinical settings.
 
----
 
 ## 2. Dataset & Pre-processing  
 - **Dataset used**: UCI/Cleveland Heart Disease dataset (~303 patients, 14 features)  
@@ -18,7 +17,6 @@ The objective of this project is to develop a clinically-readable model to predi
   - Polynomial terms (degree 2) for numeric features to capture second-order interactions  
   - One-hot encoding for categorical variables  
 
----
 
 ## 3. Models & Methodology  
 - **Baseline interpretable model**: Logistic Regression (with interactions and polynomial features)  
@@ -30,7 +28,6 @@ The objective of this project is to develop a clinically-readable model to predi
   - Recall (sensitivity) emphasized for screening use-case  
   - Calibration (Brier score + calibration plot)  
 
----
 
 ## 4. Results Summary (5-fold CV)  
 | Model             | ROC-AUC       | Recall       | Notes                         |
@@ -41,7 +38,6 @@ The objective of this project is to develop a clinically-readable model to predi
 
 Calibration on the final XGBoost model yielded a Brier score of approximately **0.15**, indicating good alignment of predicted probabilities with observed outcomes.
 
----
 
 ## 5. Interpretability & Clinical Insights  
 - **Global feature importance** (via SHAP):  
@@ -51,7 +47,6 @@ Calibration on the final XGBoost model yielded a Brier score of approximately **
   - Each prediction is accompanied by a SHAP force-plot and a plain-language summary (e.g., “Patient’s high cholesterol and elevated resting blood pressure contributed +0.28 to log-odds of heart disease”).  
   - Decision-rule output (from Decision Tree) gives simple “low/medium/high” risk buckets with trigger conditions  
 
----
 
 ## 6. Risk Stratification Framework  
 Based on predicted probabilities, we defined three risk buckets:  
